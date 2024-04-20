@@ -1,3 +1,25 @@
+#include <Windows.h>
+#include <intrin.h>
+
+#ifndef __DWORD
+#define __DWORD( _, n ) ( UINT32 )( ( ( UINT_PTR )( _ ) >> ( n * 32 ) ) & 0xFFFFFFFF )
+#endif
+#ifndef __SHORT
+#define __SHORT( _, n ) ( UINT16 )( ( ( UINT_PTR )( _ ) >> ( n * 16 ) ) & 0xFFFF )
+#endif
+#ifndef __BYTE
+#define __BYTE( _, n ) ( UINT8 )( ( ( UINT_PTR )( _ ) >> ( n * 8 ) ) & 0xFF )
+#endif
+#ifndef __BIT
+#define __BIT( _, n ) ( ( ( UINT_PTR )( _ ) >> ( n ) ) & 1 )
+#endif
+#ifndef ALIGN_HIGH
+#define ALIGN_HIGH( _, n ) ( UINT_PTR )( ( ( UINT_PTR )( _ ) + ( n - 1 ) ) & ~( n - 1 ) )
+#endif
+#ifndef ALIGN_LOW
+#define ALIGN_LOW( _, n ) ( UINT_PTR )( ( UINT_PTR )( _ ) & ~( n - 1 ) )
+#endif
+
 FORCEINLINE
 VOID
 PreparePatternSearchMask( 
