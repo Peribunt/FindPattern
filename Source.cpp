@@ -1,19 +1,19 @@
-		FORCEINLINE
-		VOID
-		PreparePatternSearchMask( 
-			OUT UINT64* ExpandedMask, 
-			OUT UINT64* CorrectedBitmask,
-			IN  UINT32  PatternLength
-			)
-		{
-			*CorrectedBitmask = _byteswap_uint64( *CorrectedBitmask << ( 64 - PatternLength ) );
+FORCEINLINE
+VOID
+PreparePatternSearchMask( 
+	OUT UINT64* ExpandedMask, 
+	OUT UINT64* CorrectedBitmask,
+	IN  UINT32  PatternLength
+	)
+{
+	*CorrectedBitmask = _byteswap_uint64( *CorrectedBitmask << ( 64 - PatternLength ) );
 		
-			for ( UINT32 i = NULL; i < sizeof( UINT64 ); i++ )
-			{
-				ExpandedMask[ i ] = 0xFF * ( ( ( ( ( ( __BYTE( *CorrectedBitmask, i ) ) * 0x0101010101010101 ) & 
-					0x102040810204080 ) + 0x7F7E7C7870604000 ) >> 7 ) & 0x0101010101010101 );
-			}
-		}
+	for ( UINT32 i = NULL; i < sizeof( UINT64 ); i++ )
+	{
+		ExpandedMask[ i ] = 0xFF * ( ( ( ( ( ( __BYTE( *CorrectedBitmask, i ) ) * 0x0101010101010101 ) & 
+			0x102040810204080 ) + 0x7F7E7C7870604000 ) >> 7 ) & 0x0101010101010101 );
+	}
+}
 
 DECLSPEC_NOINLINE
 LPVOID
