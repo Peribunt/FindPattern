@@ -1,5 +1,5 @@
 # FindPattern
-I have decided to publish this purely because of boredom. OpenMP is not used; its implementation is left as an exercise for the reader
+I have decided to publish this purely because of boredom. OpenMP is not used, should you want to execute any iterations in parallel; its implementation is left as an exercise for the reader
 
 Arguments
 ```
