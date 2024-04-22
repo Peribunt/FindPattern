@@ -1,5 +1,5 @@
 # FindPattern
-I have decided to publish this purely because of boredom. As far as I have seen, this is the fastest FindPattern routine(s) I have ever encountered and or written. OpenMP is not used; its implementation is left as an exercise for the reader
+I have decided to publish this purely because of boredom. OpenMP is not used; its implementation is left as an exercise for the reader
 
 Arguments
 ```
