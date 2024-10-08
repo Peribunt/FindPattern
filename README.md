@@ -12,5 +12,5 @@ Arguments
                     This must be formatted as an 8-bit aligned binary mask.
 
                         Example Pattern 1.) \x48\x00\x00\x00\xC3\xCC\xCC
-                           Example Mask 1.) 0b100011'00 <--- Make sure to trail zeroes to align it to the size of a byte
+                           Example Mask 1.) 0b100011
 ```
